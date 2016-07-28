@@ -1,0 +1,10 @@
+flask
+flask-sqlalchemy
+flask-wtf
+flask-jqueryuibootstrap
+flask-mandrill
+slackclient
+he-sdk-python
+mandrill
+trello
+

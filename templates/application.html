@@ -1,0 +1,42 @@
+{% extends "jqueryuibootstrap_base.html" %}
+{% import "jqueryuibootstrap_wtf.html" as wtf %}
+
+{% block title %}Application{% endblock %}
+
+{% block style %}
+{{ super() }}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.1/jquery-ui-timepicker-addon.min.css">
+{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-fixed-top">
+  <!-- ... -->
+</div>
+{% endblock %}
+
+{% block bootstrap_js_bottom %}
+{{ super() }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.1/jquery-ui-timepicker-addon.min.js"></script>
+<script>
+	$(function() {
+		$( ".dtpick" ).datetimepicker();
+	});
+</script>
+{% endblock %}
+
+{% block body_content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="login-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Application Form</h3>
+                    </div>
+                    <div class="panel-body">
+                        {{ wtf.quick_form(form, action="") }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
